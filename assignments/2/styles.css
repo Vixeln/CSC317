@@ -1,0 +1,10 @@
+html {
+  font-family: sans-serif;
+}
+main {
+  max-width: 55rem;
+}
+
+p {
+	text-indent: 1.5rem;
+}
