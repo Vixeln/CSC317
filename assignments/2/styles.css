@@ -30,3 +30,14 @@ p {
 :visited {
   color: #7091b7;
 }
+
+h1,
+h2,
+h3,
+h4,
+h4,
+h5,
+h6 {
+  color: #fff;
+}
+
