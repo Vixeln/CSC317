@@ -1,5 +1,14 @@
-html {
+body {
   font-family: sans-serif;
+  background-image: linear-gradient(135deg, #384256, #684571);
+  color: #ccd;
+  display: flex;
+  flex-direction: column;
+
+  /* Align content is used in case we have padding*/
+  align-content: center;
+
+	--border-radius: 1rem
 }
 main {
   max-width: 55rem;
