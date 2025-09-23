@@ -31,6 +31,21 @@ p {
   color: #7091b7;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  /* Align content is used in case we have padding*/
+  align-content: center;
+  align-items: center;
+
+  & > h1 {
+    width: fit-content;
+  }
+}
+#profilePicture {
+  border-radius: 50%;
+}
+
 h1,
 h2,
 h3,
