@@ -1,0 +1,38 @@
+
+body {
+  background-color: hsl(217, 33%, 17%);
+}
+
+
+
+
+
+
+
+
+
+
+#profilePicture {
+  width: 12rem;
+  border-radius: 2rem;
+  animation: 2s ease-in-out infinite alternate float;
+  transition: 0.25s all ease;
+}
+
+#profilePicture:hover {
+  transition: 0.25s all ease;
+  scale: 1.1;
+  
+}
+
+
+
+@keyframes float {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: translateY(10px);
+  }
+}
