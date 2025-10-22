@@ -1,6 +1,32 @@
 
 body {
+  color: white;
+  font-family: 'Trebuchet MS', sans-serif;;
   background-color: hsl(217, 33%, 17%);
+}
+
+main {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 5rem;
+}
+
+p {
+  max-width: 32rem;
+  
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  row-gap: 20px;
+  column-gap: 20px;
+
 }
 
 /* animation for profile picture */
