@@ -3,36 +3,28 @@ body {
   background-color: hsl(217, 33%, 17%);
 }
 
-
-
-
-
-
-
-
-
-
+/* animation for profile picture */
 #profilePicture {
-  width: 12rem;
-  border-radius: 2rem;
-  animation: 2s ease-in-out infinite alternate float;
-  transition: 0.25s all ease;
+  width: 192px;
+  border-radius: 32px;
+  animation-name: floatAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: ease;
 }
 
 #profilePicture:hover {
-  transition: 0.25s all ease;
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: all ease;
   scale: 1.1;
-  
 }
 
-
-
-@keyframes float {
-  from {
-    transform: none;
-  }
-
-  to {
-    transform: translateY(10px);
-  }
+@keyframes floatAnimation {
+  from {transform: none;}
+  to {transform: translateY(10px);}
 }
