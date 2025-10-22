@@ -14,7 +14,40 @@ main {
 
 p {
   max-width: 32rem;
-  
+}
+
+#about {
+
+}
+
+#skills {
+  display: grid;
+  grid-template-areas:  "pl tt" 
+                        "ol tt";
+}
+
+#pl {
+  grid-area: "pl";
+}
+
+#ol {
+  grid-area: "ol";
+}
+
+#tt {
+  grid-area: "tt";
+}
+
+#projects {
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-color: lightgrey hsl(0 0% 0% / 0);
+
+}
+
+#projects > section {
+  flex-shrink: 0;
+  width: 800px;
 }
 
 header {
