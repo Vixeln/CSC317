@@ -1,20 +1,20 @@
 # Group Information
 
 **Group Members:**
-- [Student Name 1] - [Student ID] - [GitHub Username] - **Hand-written CSS (Part 1)**
-- [Student Name 2] - [Student ID] - [GitHub Username] - **Hand-written CSS (Part 2)**
-- [Student Name 3] - [Student ID] - [GitHub Username] - **AI Text Prompt CSS**
-- [Student Name 4] - [Student ID] - [GitHub Username] - **AI Image+Text Prompt CSS** (if applicable)
+- Vireak Ny        - 923791086 - vixeln         - **Hand-written CSS (Part 1)**
+- Luis Buenavista  - 923271073 - lrbuenavista16 - **Hand-written CSS (Part 2)**
+- Bahara Mehry     - 924344431 - bmehry25       - **AI Text Prompt CSS**
+- Ethan Garcia     - 921840371 - CaligulaXO     - **AI and Hybrid**
 
-**Elected Submitter:** [Name and GitHub username of person submitting]
-**Repository Link:** https://github.com/[submitter-username]/CSC317/tree/main/assignments/3
+**Elected Submitter:** Vireak Ny - vixeln
+**Repository Link:** https://github.com/Vixeln/CSC317/tree/main/assignments/3
 
 ## Work Distribution
-- Hand-written CSS (Collaborative): [Member 1 Name] and [Member 2 Name]
-  - [Member 1]: [Specific sections/responsibilities]
-  - [Member 2]: [Specific sections/responsibilities]
+- Hand-written CSS (Collaborative): Vireak Ny and Luis Buenavista
+  - Vireak Ny: CSS Clean Up and Enhancements, Git Master
+  - Luis Buenavista: Styling, Animation, Layout
 - AI Text Prompt CSS: [Member 3 Name]
 - AI Image+Text Prompt CSS: [Member 4 Name] (or Member 3 if 3-person group)
-- Hybrid Solution: [All Members - collaborative effort]
+- Hybrid Solution: Bahara Mehry, Ethan Garcia
 - Switcher Implementation: [All Members - collaborative effort]
 - Documentation & Analysis: [Lead member name(s)]
