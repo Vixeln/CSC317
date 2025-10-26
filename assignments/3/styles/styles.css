@@ -1,86 +1,131 @@
+
 body {
-  font-family: sans-serif;
-  background-image: linear-gradient(135deg, #384256, #684571);
-  color: #ccd;
-  display: flex;
-  flex-direction: column;
+  color: white;
+  font-family: 'Trebuchet MS', sans-serif;;
+  background-color: hsl(217 33% 17%);
+  display: grid;
+  grid-template-areas: "hd      nav"
+                       "content nav"
+                       "footer  footer";
+  grid-template-columns: auto 10rem;
+  grid-template-rows: auto auto auto;
 
-  /* Align content is used in case we have padding*/
-  align-content: center;
-
-	--border-radius: 1rem
 }
-main {
-  box-sizing: border-box;
-  max-width: 55rem;
-  padding: 1rem 2.5rem;
-  border-radius: var(--border-radius);
-  background-color: #1a1b2b;
 
-  align-self: center;
+header {
+  grid-area: hd;
+}
+
+aside {
+  grid-area: nav;
+}
+
+aside > nav {
+  position: sticky;
+  top: 0px;
+  background-color: hsl(217 57% 29% / 10);
+  /* style links */
+  & a:any-link {
+    color: grey;
+    text-decoration: none;
+    /* style links when hovering */
+    &:hover {
+      color: white;
+    }
+  }
+
+
+}
+
+main {
+  grid-area: content;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 5rem;
+}
+
+footer {
+  grid-area: footer;
 }
 
 p {
-  text-indent: 1.5rem;
+  max-width: 32rem;
 }
 
-:link {
-  color: #7bbcdd;
+#about {
+
 }
-:visited {
-  color: #a3c1e3;
+
+#skills {
+  display: grid;
+  grid-template-areas:  "pl tt" 
+                        "ol tt";
+}
+
+#pl {
+  grid-area: pl;
+}
+
+#ol {
+  grid-area: ol;
+}
+
+#tt {
+  grid-area: tt;
+}
+
+#projects {
+  display: flex;
+  gap: 1rem 1rem;
+  overflow-x: scroll;
+  scrollbar-color: lightgrey hsl(0 0% 0% / 0);
+}
+
+#projects > section {
+  flex-shrink: 0;
+  width: 30%;
+  background-color: hsl(217 57% 29% / 10);
+  border-radius: 48px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 header {
   display: flex;
-  flex-direction: column;
-  /* Align content is used in case we have padding*/
-  align-content: center;
   align-items: center;
-
-  & > h1 {
-    width: fit-content;
-  }
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  row-gap: 20px;
+  column-gap: 20px;
 }
+
+/* animation for profile picture */
 #profilePicture {
-  border-radius: 50%;
-	animation: 5s ease-in-out 0s infinite alternate rise;
+  width: 192px;
+  border-radius: 32px;
+  animation-name: floatAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: ease;
 }
 
-@keyframes rise {
-	from {
-		transform: translateY(none);
-	}
-	to {
-		transform: translateY(-2vh);
-	}
+#profilePicture:hover {
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: all ease;
+  scale: 1.1;
 }
 
-h1,
-h2,
-h3,
-h4,
-h4,
-h5,
-h6 {
-  color: #fff;
-}
-
-.projectLinks > a {
-	padding: 0.5rem 0.7rem;
-	border-radius: 0.5rem;
-
-	color: #dec7e2;
-	font-weight: bold;
-	text-decoration: none;
-
-	background-color: #344e7a;
-}
-
-footer {
-  padding: 0 2rem;
-
-	& > ul {
-		list-style: none;
-	}
+@keyframes floatAnimation {
+  from {transform: none;}
+  to {transform: translateY(10px);}
 }

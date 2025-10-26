@@ -1,13 +1,13 @@
 # CSC 317 Assignment 3 Group Submission
 
 **Group Members:**
-- [Student Name 1] - [Student ID] - [GitHub Username]
-- [Student Name 2] - [Student ID] - [GitHub Username]
-- [Student Name 3] - [Student ID] - [GitHub Username]
-- [Student Name 4] - [Student ID] - [GitHub Username] (if applicable)
+- Vireak Ny        - 923791086 - vixeln        
+- Luis Buenavista  - 923271073 - lrbuenavista16
+- Bahara Mehry     - 924344431 - bmehry25
+- Ethan Garcia     - 921840371 - CaligulaXO
 
-**Elected Submitter:** [Name and GitHub username]
-**Repository Link:** https://github.com/[submitter-username]/CSC317/tree/main/assignments/3
+**Elected Submitter:** Vireak Ny - vixeln
+**Repository Link:** https://github.com/Vixeln/CSC317/tree/main/assignments/3
 
 # Portfolio Styling Assignment Analysis
 
@@ -16,16 +16,16 @@
 
 ## Individual Reflections
 
-### [Member 1 Name] - Hand-written CSS (Part 1)
+### Vireak Ny - Hand-written CSS (Part 1)
 [Individual reflection on lessons learned and contribution to hand-written CSS]
 
-### [Member 2 Name] - Hand-written CSS (Part 2)
+### Luis Buenavista - Hand-written CSS (Part 2)
 [Individual reflection on lessons learned and contribution to hand-written CSS]
 
-### [Member 3 Name] - AI Text Prompt CSS
+### Bahara Mehry - AI Text Prompt CSS
 [Individual reflection on AI prompting experience and lessons learned]
 
-### [Member 4 Name] - AI Image+Text Prompt CSS (if applicable)
+### Ethan Garcia - AI Image+Text Prompt CSS (if applicable)
 [Individual reflection on AI prompting with images and lessons learned]
 
 ## Group Preferred Version
