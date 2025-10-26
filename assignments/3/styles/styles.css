@@ -1,0 +1,131 @@
+
+body {
+  color: white;
+  font-family: 'Trebuchet MS', sans-serif;;
+  background-color: hsl(217 33% 17%);
+  display: grid;
+  grid-template-areas: "hd      nav"
+                       "content nav"
+                       "footer  footer";
+  grid-template-columns: auto 10rem;
+  grid-template-rows: auto auto auto;
+
+}
+
+header {
+  grid-area: hd;
+}
+
+aside {
+  grid-area: nav;
+}
+
+aside > nav {
+  position: sticky;
+  top: 0px;
+  background-color: hsl(217 57% 29% / 10);
+  /* style links */
+  & a:any-link {
+    color: grey;
+    text-decoration: none;
+    /* style links when hovering */
+    &:hover {
+      color: white;
+    }
+  }
+
+
+}
+
+main {
+  grid-area: content;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 5rem;
+}
+
+footer {
+  grid-area: footer;
+}
+
+p {
+  max-width: 32rem;
+}
+
+#about {
+
+}
+
+#skills {
+  display: grid;
+  grid-template-areas:  "pl tt" 
+                        "ol tt";
+}
+
+#pl {
+  grid-area: pl;
+}
+
+#ol {
+  grid-area: ol;
+}
+
+#tt {
+  grid-area: tt;
+}
+
+#projects {
+  display: flex;
+  gap: 1rem 1rem;
+  overflow-x: scroll;
+  scrollbar-color: lightgrey hsl(0 0% 0% / 0);
+}
+
+#projects > section {
+  flex-shrink: 0;
+  width: 30%;
+  background-color: hsl(217 57% 29% / 10);
+  border-radius: 48px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+/* animation for profile picture */
+#profilePicture {
+  width: 192px;
+  border-radius: 32px;
+  animation-name: floatAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: ease;
+}
+
+#profilePicture:hover {
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: all ease;
+  scale: 1.1;
+}
+
+@keyframes floatAnimation {
+  from {transform: none;}
+  to {transform: translateY(10px);}
+}
