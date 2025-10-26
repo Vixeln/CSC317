@@ -1,1 +1,264 @@
-shell command
+/* =========================
+   Minimal Portfolio Theme
+   Author: College Student :)
+   ========================= */
+
+/* ---- Theme tokens ---- */
+:root{
+  --bg: #131313;        /* matte dark gray */
+  --elev-1: #1a1a1a;    /* subtle card elevation */
+  --text: #ffffff;      /* white text */
+  --muted: #d9d9d9;     /* soft secondary text */
+  --line: #2a2a2a;      /* hairline borders */
+  --accent: #ffffff;    /* white accents */
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* ---- Base reset ---- */
+*, *::before, *::after{ box-sizing: border-box; }
+html, body{
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Inter,
+               "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+img{ max-width: 100%; display: block; }
+
+/* ---- Links ---- */
+a{
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, opacity .2s ease;
+}
+a:hover, a:focus{ border-color: var(--accent); opacity: .9; outline: none; }
+
+/* ---- Container ---- */
+main{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+/* ---- Headings ---- */
+h1, h2, h3{
+  margin: 0 0 .6rem;
+  font-weight: 800; /* bold headings */
+}
+h1{
+  font-size: clamp(3rem, 6vw, 5rem); /* 3–5rem big, bold name */
+  letter-spacing: .5px;
+}
+h2{
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+}
+h3{
+  font-size: clamp(1.15rem, 2.3vw, 1.35rem);
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* =========================
+   HERO SECTIONS (≈60% page)
+   ========================= */
+
+/* 1) Name & Profile (Header as hero) */
+header{
+  min-height: 60svh;              /* ≈60% viewport height */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+  isolation: isolate;
+}
+header::after{
+  /* soft radial glow to keep it modern but subtle */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 40% at 50% 20%, rgba(255,255,255,.06), transparent 70%),
+    radial-gradient(80% 60% at 50% 120%, rgba(255,255,255,.04), transparent 70%);
+  z-index: -1;
+}
+header p{
+  color: var(--muted);            /* subtitle under name */
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  margin-top: .25rem;
+}
+
+/* Profile image: circle + centered */
+#profilePicture{
+  width: min(200px, 40vw);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.25rem;
+  border: 2px solid var(--line);
+  box-shadow: 0 12px 30px rgba(0,0,0,.5);
+}
+
+/* 2) About Me hero (first H2 in <main>) */
+main > h2:nth-of-type(1){
+  min-height: 60svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: 2rem;
+}
+
+/* Subtitle-like first paragraph under About */
+main > h2:nth-of-type(1) + p{
+  margin: -2rem auto 2rem; /* tuck closer to hero heading */
+  width: min(850px, 90%);
+  color: var(--muted);
+  font-size: clamp(1rem, 2.1vw, 1.15rem);
+  text-align: center;
+}
+
+/* Subsequent About paragraphs */
+main > h2:nth-of-type(1) ~ p{
+  width: min(850px, 90%);
+  margin: 0.75rem auto;
+  color: var(--muted);
+}
+
+/* 3) Skills hero (second H2) */
+main > h2:nth-of-type(2){
+  min-height: 60svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: 3rem;
+}
+
+/* =========================
+   SKILLS as animated chips
+   ========================= */
+
+/* Target the skill lists after the Skills H2 and before the next H2 */
+main > h2:nth-of-type(2) ~ section ul{
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+main > h2:nth-of-type(2) ~ section ul li{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem .95rem;
+  border-radius: 999px;                             /* pill buttons */
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #1c1c1c, #171717);
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: .2px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  cursor: default;
+}
+
+main > h2:nth-of-type(2) ~ section ul li:hover{
+  transform: translateY(-3px);                      /* “move on hover” */
+  box-shadow: 0 16px 36px rgba(0,0,0,.35);
+  background: linear-gradient(180deg, #202020, #181818);
+}
+
+/* =========================
+   PROJECTS
+   ========================= */
+
+main > h2:nth-of-type(3){   /* "Recent Projects" heading */
+  margin: 4rem 0 1.25rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+main > section{
+  padding: 1.25rem;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--elev-1);
+  box-shadow: var(--shadow);
+}
+
+.projectLinks{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: .75rem;
+}
+.projectLinks a{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  transition: background .2s ease, transform .18s ease,
+              box-shadow .18s ease, border-color .2s ease;
+}
+.projectLinks a:hover{
+  background: #1e1e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.35);
+  border-color: var(--accent);
+}
+
+/* =========================
+   FOOTER / CONTACT
+   ========================= */
+
+footer{
+  text-align: center;
+  padding: 3.5rem 1rem 6rem; /* extra bottom padding away from page edge */
+  border-top: 1px solid var(--line);
+  width: min(900px, 92vw);
+  margin: 3rem auto 0;
+}
+footer h2{ margin-bottom: .5rem; }
+footer p{ color: var(--muted); margin: .25rem 0 1rem; }
+footer ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .5rem;
+}
+footer address{ font-style: normal; color: var(--text); }
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+:focus-visible{
+  outline: 2px dashed var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* =========================
+   RESPONSIVE TWEAKS
+   ========================= */
+@media (max-width: 640px){
+  header{ padding: 2.25rem 1rem; }
+  .projectLinks{ justify-content: center; }
+  main > section{ padding: 1rem; }
+}
