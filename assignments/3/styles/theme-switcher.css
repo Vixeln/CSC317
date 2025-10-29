@@ -1,0 +1,25 @@
+#theme-switcher {
+  position: fixed;
+  z-index: 1;
+  bottom: 1rem;
+  right: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+button.theme-button {
+  backdrop-filter: blur(0.5rem);
+
+	/* Makes the button look like it's popping out */
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-color: rgb(224, 208, 238);
+
+  font-size: large;
+  font-weight: bold;
+  color: hsl(242, 30%, 33%);
+
+  padding-inline: 1rem;
+}
