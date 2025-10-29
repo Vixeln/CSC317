@@ -5,8 +5,12 @@
     <link
       rel="stylesheet"
       href="styles/styles.css"
+      id="document-style"
     />
-		<script async src="scripts/switcher.js"></script>
+    <script
+      defer
+      src="scripts/switcher.js"
+    ></script>
     <meta charset="UTF-8" />
   </head>
 
@@ -202,9 +206,50 @@
     </main>
     <aside>
       <nav>
-				<ul id="theme-buttons">
-					<button>Placeholder Theme Button</button>
-				</ul>
+        <ul id="theme-switcher">
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="styles.css"
+          >
+            Manual
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="hybrid.css"
+          >
+            Hybrid
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="ai-1.css"
+          >
+            AI 1
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="ai-2.css"
+          >
+            AI 2
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="ai-3.css"
+          >
+            AI 3
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="ai-4.css"
+          >
+            AI 4
+          </button>
+        </ul>
         <ul id="table-of-contents">
           <li><a href = "#about">About Me</a></li>
           <li><a href = "#skills">Skills</a></li>
