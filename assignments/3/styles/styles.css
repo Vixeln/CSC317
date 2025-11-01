@@ -101,7 +101,17 @@ p {
 }
 
 #about {
+  max-width: unset;
+  column-count: 2;
 
+  padding: var(--padding-default);
+
+  background-color: var(--foreground-color);
+  border-radius: var(--border-radius-default);
+
+  & > p {
+    break-inside: avoid;
+  }
 }
 
 #skills {
