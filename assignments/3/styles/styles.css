@@ -47,6 +47,28 @@ aside > nav {
 	}
 }
 
+:link {
+  color: #7bbcdd;
+}
+:visited {
+  color: #a3c1e3;
+}
+
+.projectLinks > a {
+	box-sizing: content-box;
+	padding: 0.5rem 0.7rem;
+	margin-block: 0.25rem;
+	border-radius: 0.5rem;
+	display: block;
+
+	color: #dec7e2;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+
+	background-color: #5f5887;
+}
+
 main {
   grid-area: content;
   padding-top: 0.5rem;
