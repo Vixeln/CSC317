@@ -2,7 +2,7 @@
 
 :root{
   --bg: #000000;
-  --maroon: #390909;
+  --maroon: #bd1818;
   --text: #ffffff;
   --muted: #d1d1d1;
   --line: rgba(255,255,255,0.1);
@@ -65,7 +65,7 @@ header{
   object-fit: cover;
   border-radius: 50%; /* round profile */
   border: 3px solid var(--maroon);
-  box-shadow: 0 0 20px rgba(57,9,9,0.6);
+  box-shadow: 0 0 67px rgba(253, 44, 44, 0.6);
   margin: 0 auto;
 }
 
@@ -173,6 +173,61 @@ main > h2:nth-of-type(3) ~ section{
   background: rgba(57,9,9,0.25); transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(57,9,9,.4); border-color: var(--maroon);
 }
+
+/*<navbar>*/
+aside {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  background-color: rgba(17,17,17,0.9);
+  border: 1px solid var(--maroon);
+  padding: 15px 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 0 20px rgba(57,9,9,0.6);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#table-of-contents li {
+  margin: 10px 0;
+}
+
+#table-of-contents a {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .3s ease, border-color .3s ease;
+}
+
+#table-of-contents a:hover {
+  color: var(--maroon);
+  border-color: var(--maroon);
+}
+
+#theme-buttons button {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--maroon);
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+#theme-buttons button:hover {
+  background-color: var(--maroon);
+  color: #f36969;
+}
+
 
 /* Footer, white text with maroon title */
 footer{
