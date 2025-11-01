@@ -1,6 +1,11 @@
 :root {
 	--background-color: hsl(217 33% 17%);
 	--foreground-color: hsl(217, 39%, 31%);
+  --paragraph-width-default: 36rem;
+  --card-width-default: 24rem;
+  --padding-default: 1rem;
+  --margin-default: 1rem;
+  --border-radius-default: 1rem;
 }
 
 body {
