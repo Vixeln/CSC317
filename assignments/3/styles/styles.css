@@ -1,8 +1,12 @@
+:root {
+	--background-color: hsl(217 33% 17%);
+	--foreground-color: hsl(217, 39%, 31%);
+}
 
 body {
   color: white;
   font-family: 'Trebuchet MS', sans-serif;;
-  background-color: hsl(217 33% 17%);
+  background-color: var(--background-color);
   display: grid;
   grid-template-areas: "hd      nav"
                        "content nav"
@@ -117,7 +121,7 @@ p {
 #projects > section {
   flex-shrink: 0;
   width: 30%;
-  background-color: hsl(217 57% 29% / 10);
+  background-color: var(--foreground-color);
   border-radius: 48px;
   padding-top: 1rem;
   padding-bottom: 1rem;
