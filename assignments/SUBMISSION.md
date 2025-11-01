@@ -17,7 +17,9 @@
 ## Individual Reflections
 
 ### Vireak Ny - Hand-written CSS (Part 1)
-[Individual reflection on lessons learned and contribution to hand-written CSS]
+While making the AI stylesheet, it was quite convenient for ChatGPT to generate the base styles as it saved me a lot of setup time. However, I realized that I still had to analyze the CSS myself to try to understand why certain styles were breaking so that I can instruct the AI to fix the correct error. 
+
+As for working with Luis on the manual stylesheet, I was helping him learn CSS animations, transitions,flexboxes and grids. A difficulty I had with that was communication and terminologies. We actually just drew a wireframe of the website on a piece of paper so that both of us were on the same track.
 
 ### Luis Buenavista - Hand-written CSS (Part 2)
 [Individual reflection on lessons learned and contribution to hand-written CSS]
