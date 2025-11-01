@@ -64,6 +64,7 @@ aside > nav {
   color: #a3c1e3;
 }
 
+/* Make All project links look like a button */
 .projectLinks > a {
 	box-sizing: content-box;
 	padding: 0.5rem 0.7rem;
