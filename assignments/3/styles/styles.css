@@ -38,24 +38,26 @@ aside > nav {
   top: 0px;
 
   font-size: large;
-  /* style links */
-  & a:any-link {
-    color: grey;
-    text-decoration: none;
+}
 
-    /* style links when hovering */
-    &:hover {
-      color: white;
-    }
-  }
+/* style links */
+aside > nav a:any-link {
+  color: grey;
+  text-decoration: none;
 
-  & ul#table-of-contents {
-    list-style: none;
-    padding-inline-start: 0;
-    padding: var(--padding-default);
+  /* style links when hovering */
+}
 
-    margin-block: 0;
-  }
+aside > nav a:any-link:hover {
+  color: white;
+}
+
+aside > nav ul#table-of-contents {
+  list-style: none;
+  padding-inline-start: 0;
+  padding: var(--padding-default);
+
+  margin-block: 0;
 }
 
 /* Update link colors so that they match with the color theme */
@@ -93,12 +95,11 @@ main {
 footer {
   grid-area: footer;
   padding-inline: 3rem;
-
-  & ul {
-    list-style: none;
-  }
 }
 
+footer ul {
+  list-style: none;
+}
 
 #about {
   max-width: unset;
@@ -108,10 +109,10 @@ footer {
 
   background-color: var(--foreground-color);
   border-radius: var(--border-radius-default);
+}
 
-  & > p {
-    break-inside: avoid;
-  }
+#about > p {
+  break-inside: avoid;
 }
 
 #skills {
@@ -121,12 +122,12 @@ footer {
     "ol tt";
 
   gap: var(--margin-default);
+}
 
-  & > section {
-    padding: var(--padding-default);
-    border-radius: var(--border-radius-default);
-    background-color: var(--foreground-color);
-  }
+#skills > section {
+  padding: var(--padding-default);
+  border-radius: var(--border-radius-default);
+  background-color: var(--foreground-color);
 }
 
 #pl {
