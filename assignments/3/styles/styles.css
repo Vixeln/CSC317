@@ -1,6 +1,6 @@
 :root {
-	--background-color: hsl(217 33% 17%);
-	--foreground-color: hsl(217, 39%, 31%);
+  --background-color: hsl(217 33% 17%);
+  --foreground-color: hsl(217, 39%, 31%);
   --paragraph-width-default: 36rem;
   --card-width-default: 24rem;
   --padding-default: 1rem;
@@ -10,16 +10,17 @@
 
 body {
   color: rgb(221, 228, 236);
-  font-family: 'Trebuchet MS', sans-serif;;
+  font-family: "Trebuchet MS", sans-serif;
   background-color: var(--background-color);
   display: grid;
-  grid-template-areas: "hd      nav"
-                       "content nav"
-                       "footer  footer";
+  grid-template-areas:
+    "hd      nav"
+    "content nav"
+    "footer  footer";
   grid-template-columns: auto 10rem;
   grid-template-rows: auto auto auto;
 
-	margin: 0;
+  margin: 0;
 }
 
 header {
@@ -36,27 +37,28 @@ aside > nav {
   position: sticky;
   top: 0px;
 
-	font-size: large;
+  font-size: large;
   /* style links */
   & a:any-link {
     color: grey;
     text-decoration: none;
-		
+
     /* style links when hovering */
     &:hover {
       color: white;
     }
   }
 
-	& ul#table-of-contents {
-		list-style: none;
-		padding-inline-start: 0;
+  & ul#table-of-contents {
+    list-style: none;
+    padding-inline-start: 0;
     padding: var(--padding-default);
 
-		margin-block: 0;
-	}
+    margin-block: 0;
+  }
 }
 
+/* Update link colors so that they match with the color theme */
 :link {
   color: #7bbcdd;
 }
@@ -66,18 +68,18 @@ aside > nav {
 
 /* Make All project links look like a button */
 .projectLinks > a {
-	box-sizing: content-box;
-	padding: 0.5rem 0.7rem;
-	margin-block: 0.25rem;
-	border-radius: 0.5rem;
-	display: block;
+  box-sizing: content-box;
+  padding: 0.5rem 0.7rem;
+  margin-block: 0.25rem;
+  border-radius: 0.5rem;
+  display: block;
 
-	color: #dec7e2;
-	font-weight: bold;
-	text-decoration: none;
-	text-align: center;
+  color: #dec7e2;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
 
-	background-color: #5f5887;
+  background-color: #5f5887;
 }
 
 main {
@@ -114,8 +116,9 @@ footer {
 
 #skills {
   display: grid;
-  grid-template-areas:  "pl tt" 
-                        "ol tt";
+  grid-template-areas:
+    "pl tt"
+    "ol tt";
 
   gap: var(--margin-default);
 
@@ -190,6 +193,10 @@ header {
 }
 
 @keyframes floatAnimation {
-  from {transform: none;}
-  to {transform: translateY(10px);}
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateY(10px);
+  }
 }
