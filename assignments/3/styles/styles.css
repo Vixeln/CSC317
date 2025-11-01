@@ -189,7 +189,7 @@ header {
 #profilePicture:hover {
   transition-duration: 0.25s;
   transition-property: all;
-  transition-timing-function: all ease;
+  transition-timing-function: ease;
   scale: 1.1;
 }
 
