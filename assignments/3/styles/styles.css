@@ -83,6 +83,11 @@ main {
 
 footer {
   grid-area: footer;
+  padding-inline: 3rem;
+
+  & ul {
+    list-style: none;
+  }
 }
 
 p {
