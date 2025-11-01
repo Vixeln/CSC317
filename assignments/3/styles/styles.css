@@ -10,6 +10,7 @@ body {
   grid-template-columns: auto 10rem;
   grid-template-rows: auto auto auto;
 
+	margin: 0;
 }
 
 header {
@@ -24,17 +25,26 @@ aside > nav {
   position: sticky;
   top: 0px;
   background-color: hsl(217 57% 29% / 10);
+
+	font-size: large;
   /* style links */
   & a:any-link {
     color: grey;
     text-decoration: none;
+		
     /* style links when hovering */
     &:hover {
       color: white;
     }
   }
 
+	& ul#table-of-contents {
+		list-style: none;
+		padding-inline-start: 0;
+		padding: 1rem;
 
+		margin-block: 0;
+	}
 }
 
 main {
