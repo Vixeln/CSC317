@@ -5,8 +5,17 @@
     <link
       rel="stylesheet"
       href="styles/styles.css"
+      id="document-style"
     />
-		<script async src="scripts/switcher.js"></script>
+    <!-- The theme switcher should get its own style so that it is not affected by the different themes -->
+    <link
+      rel="stylesheet"
+      href="styles/theme-switcher.css"
+    />
+    <script
+      defer
+      src="scripts/switcher.js"
+    ></script>
     <meta charset="UTF-8" />
   </head>
 
@@ -61,45 +70,44 @@
       <section>
         <h2>Skills</h2>
         <div id="skills">
-        <section id="pl">
-          <h3>Programming Languages</h3>
-          <ul>
-            <li>Java</li>
-            <li>C++ (Learning)</li>
-            <li>Javascript</li>
-            <li>Typescript</li>
-            <li>OpenGL (Learning)</li>
-            <li>Python (Basic)</li>
-          </ul>
-        </section>
-        <section id ="ol">
-          <h3>Other Languages</h3>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JSDoc</li>
-            <li>YAML</li>
-          </ul>
-        </section>
-        <section id="tt">
-          <h3>Tools And Technology</h3>
-          <ul>
-            <li>Git/GitHub</li>
-            <li>Git Tower</li>
-            <li>Node/NPM</li>
-            <li>NextJS/Prettier/Eslint</li>
-            <li>ReactJS</li>
-            <li>VueJS</li>
-            <li>VS Code</li>
-            <li>Aseprite</li>
-            <li>Blender/Blender Shader Nodes/Blender Geometry Nodes</li>
-            <li>Blockbench</li>
-            <li>Minecraft Javascript API</li>
-          </ul>
-        </section>
+          <section id="pl">
+            <h3>Programming Languages</h3>
+            <ul>
+              <li>Java</li>
+              <li>C++ (Learning)</li>
+              <li>Javascript</li>
+              <li>Typescript</li>
+              <li>OpenGL (Learning)</li>
+              <li>Python (Basic)</li>
+            </ul>
+          </section>
+          <section id="ol">
+            <h3>Other Languages</h3>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JSDoc</li>
+              <li>YAML</li>
+            </ul>
+          </section>
+          <section id="tt">
+            <h3>Tools And Technology</h3>
+            <ul>
+              <li>Git/GitHub</li>
+              <li>Git Tower</li>
+              <li>Node/NPM</li>
+              <li>NextJS/Prettier/Eslint</li>
+              <li>ReactJS</li>
+              <li>VueJS</li>
+              <li>VS Code</li>
+              <li>Aseprite</li>
+              <li>Blender/Blender Shader Nodes/Blender Geometry Nodes</li>
+              <li>Blockbench</li>
+              <li>Minecraft Javascript API</li>
+            </ul>
+          </section>
+        </div>
       </section>
-    </div>
-        
       <section>
         <h2>Recent Projects</h2>
         <div id="projects">
@@ -110,12 +118,12 @@
               project to learn the VueJS framework during the Winter break in
               January 2025. The website is suppose to serve as project navigator
               to display all of my past projects. Because a lot of my past
-              projects were on Desmos, I wanted to build a wrapper to showcase my
-              Desmos projects.
+              projects were on Desmos, I wanted to build a wrapper to showcase
+              my Desmos projects.
             </p>
             <p>
-              This project has taught me . After using it for a few weeks, I have
-              grown to like their Single File Component philosophy a lot.
+              This project has taught me . After using it for a few weeks, I
+              have grown to like their Single File Component philosophy a lot.
             </p>
             <div class="projectLinks">
               <a href="https://vixeln.github.io/Vixite/">Personal Website</a>
@@ -203,9 +211,50 @@
     </main>
     <aside>
       <nav>
-				<ul id="theme-buttons">
-					<button>Placeholder Theme Button</button>
-				</ul>
+        <ul id="theme-switcher">
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="styles.css"
+          >
+            Manual
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="hybrid.css"
+          >
+            Hybrid
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="ai-1.css"
+          >
+            AI 1
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="ai-2.css"
+          >
+            AI 2
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="ai-3.css"
+          >
+            AI 3
+          </button>
+          <button
+            type="button"
+            class="theme-button"
+            data-theme="ai-4.css"
+          >
+            AI 4
+          </button>
+        </ul>
         <ul id="table-of-contents">
           <li><a href = "#about">About Me</a></li>
           <li><a href = "#skills">Skills</a></li>
