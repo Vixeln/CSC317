@@ -28,12 +28,13 @@ header {
 
 aside {
   grid-area: nav;
+
+  background-color: var(--foreground-color);
 }
 
 aside > nav {
   position: sticky;
   top: 0px;
-  background-color: hsl(217 57% 29% / 10);
 
 	font-size: large;
   /* style links */
@@ -50,7 +51,7 @@ aside > nav {
 	& ul#table-of-contents {
 		list-style: none;
 		padding-inline-start: 0;
-		padding: 1rem;
+    padding: var(--padding-default);
 
 		margin-block: 0;
 	}
@@ -130,9 +131,10 @@ p {
 
 #projects > section {
   flex-shrink: 0;
-  width: 30%;
+  flex-basis: var(--card-width-default);
+
   background-color: var(--foreground-color);
-  border-radius: 48px;
+  border-radius: var(--border-radius-default);
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
