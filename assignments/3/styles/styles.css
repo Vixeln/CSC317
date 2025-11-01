@@ -201,3 +201,38 @@ header {
     transform: translateY(10px);
   }
 }
+
+/* This is a very quick last minute patch to add some responsive design for mobile devices */
+/* I know that this goes against its principles because I'm not designing for mobile before designing for desktop */
+
+@media (max-width: 968px) {
+  body {
+    grid-template-areas:
+      "hd      "
+      "content "
+      "footer  ";
+
+    grid-template-columns: auto;
+  }
+
+  #about {
+    max-width: unset;
+    column-count: 1;
+  }
+
+  #skills {
+    grid-template-areas:
+      "pl "
+      "ol "
+      "tt";
+  }
+
+  #projects {
+    flex-direction: column;
+  }
+
+  /* The table of contents is hard to incorporate on a vertical screen without the javascript for a hamburger menu */
+  #table-of-contents {
+    display: none;
+  }
+}
