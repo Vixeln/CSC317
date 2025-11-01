@@ -1,15 +1,26 @@
+:root {
+  --background-color: hsl(217 33% 17%);
+  --foreground-color: hsl(217, 39%, 31%);
+  --paragraph-width-default: 36rem;
+  --card-width-default: 24rem;
+  --padding-default: 1rem;
+  --margin-default: 1rem;
+  --border-radius-default: 1rem;
+}
 
 body {
-  color: white;
-  font-family: 'Trebuchet MS', sans-serif;;
-  background-color: hsl(217 33% 17%);
+  color: rgb(221, 228, 236);
+  font-family: "Trebuchet MS", sans-serif;
+  background-color: var(--background-color);
   display: grid;
-  grid-template-areas: "hd      nav"
-                       "content nav"
-                       "footer  footer";
+  grid-template-areas:
+    "hd      nav"
+    "content nav"
+    "footer  footer";
   grid-template-columns: auto 10rem;
   grid-template-rows: auto auto auto;
 
+  margin: 0;
 }
 
 header {
@@ -18,23 +29,57 @@ header {
 
 aside {
   grid-area: nav;
+
+  background-color: var(--foreground-color);
 }
 
 aside > nav {
   position: sticky;
   top: 0px;
-  background-color: hsl(217 57% 29% / 10);
+
+  font-size: large;
   /* style links */
   & a:any-link {
     color: grey;
     text-decoration: none;
+
     /* style links when hovering */
     &:hover {
       color: white;
     }
   }
 
+  & ul#table-of-contents {
+    list-style: none;
+    padding-inline-start: 0;
+    padding: var(--padding-default);
 
+    margin-block: 0;
+  }
+}
+
+/* Update link colors so that they match with the color theme */
+:link {
+  color: #7bbcdd;
+}
+:visited {
+  color: #a3c1e3;
+}
+
+/* Make All project links look like a button */
+.projectLinks > a {
+  box-sizing: content-box;
+  padding: 0.5rem 0.7rem;
+  margin-block: 0.25rem;
+  border-radius: 0.5rem;
+  display: block;
+
+  color: #dec7e2;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+
+  background-color: #5f5887;
 }
 
 main {
@@ -47,20 +92,41 @@ main {
 
 footer {
   grid-area: footer;
+  padding-inline: 3rem;
+
+  & ul {
+    list-style: none;
+  }
 }
 
-p {
-  max-width: 32rem;
-}
 
 #about {
+  max-width: unset;
+  column-count: 2;
 
+  padding: var(--padding-default);
+
+  background-color: var(--foreground-color);
+  border-radius: var(--border-radius-default);
+
+  & > p {
+    break-inside: avoid;
+  }
 }
 
 #skills {
   display: grid;
-  grid-template-areas:  "pl tt" 
-                        "ol tt";
+  grid-template-areas:
+    "pl tt"
+    "ol tt";
+
+  gap: var(--margin-default);
+
+  & > section {
+    padding: var(--padding-default);
+    border-radius: var(--border-radius-default);
+    background-color: var(--foreground-color);
+  }
 }
 
 #pl {
@@ -84,9 +150,10 @@ p {
 
 #projects > section {
   flex-shrink: 0;
-  width: 30%;
-  background-color: hsl(217 57% 29% / 10);
-  border-radius: 48px;
+  flex-basis: var(--card-width-default);
+
+  background-color: var(--foreground-color);
+  border-radius: var(--border-radius-default);
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
@@ -126,6 +193,10 @@ header {
 }
 
 @keyframes floatAnimation {
-  from {transform: none;}
-  to {transform: translateY(10px);}
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateY(10px);
+  }
 }
