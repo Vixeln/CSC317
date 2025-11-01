@@ -96,9 +96,6 @@ footer {
   }
 }
 
-p {
-  max-width: 32rem;
-}
 
 #about {
   max-width: unset;
