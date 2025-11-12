@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vireak Ny</title>
+    <link
+      rel="stylesheet"
+      href="styles/styles.css"
+      id="document-style"
+    />
+    <script
+      defer
+      src="scripts/calculator.js"
+    ></script>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+		<main>
+			<form>
+				<input type="text" readonly id="expression"></input>
+				<button type="button" class="operation" data-action="delete">DEL</button>
+				<button type="button" class="operation" data-action="clear-all">AC</button>
+				<button type="button" class="operation" data-action="precent">%</button>
+				<button type="button" class="operation" data-action="divide">÷</button>
+				<button type="button" class="numpad" data-action="7">7</button>
+				<button type="button" class="numpad" data-action="8">8</button>
+				<button type="button" class="numpad" data-action="9">9</button>
+				<button type="button" class="numpad" data-action="4">4</button>
+				<button type="button" class="numpad" data-action="5">5</button>
+				<button type="button" class="numpad" data-action="6">6</button>
+				<button type="button" class="numpad" data-action="1">1</button>
+				<button type="button" class="numpad" data-action="2">2</button>
+				<button type="button" class="numpad" data-action="3">3</button>
+				<button type="button" class="numpad" data-action="toggle-sign">+/-</button>
+				<button type="button" class="numpad" data-action="0">0</button>
+				<button type="button" class="numpad" data-action=".">.</button>
+				<button type="button" class="operation" data-action="=">=</button>
+			</form>
+		</main>
+  </body>
+</html>
