@@ -79,5 +79,5 @@ document.addEventListener("keyup", (event) => {
 document.addEventListener("click", (event) => {
   const action = Action.getActionByIdentifier(event.target.dataset.action);
 
-  action.onTrigger();
+  action.call();
 });

@@ -7,7 +7,7 @@ export class Action {
   identifier;
   keybind;
   button;
-  onTrigger;
+  #onTrigger;
 
   /**
    *
@@ -20,7 +20,7 @@ export class Action {
     this.identifier = identifier;
     this.keybind = keyBind;
     this.button = button;
-    this.onTrigger = callBackFunction;
+    this.#onTrigger = callBackFunction;
 
     new.target.#keybindMap.set(keyBind, this);
     new.target.#identifierMap.set(identifier, this);
@@ -47,4 +47,11 @@ export class Action {
   static getActionByKeybind(keybind) {
     return Action.#keybindMap.get(keybind);
   }
+
+	/**
+	 * Calls the callback function of the action
+	 */
+	call() {
+		this.#onTrigger(this)
+	}
 }
