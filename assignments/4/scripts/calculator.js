@@ -1,3 +1,6 @@
+/**
+ * The Calculator currently does not support keyboard input with modifier keys like control, alt, shift etc.
+ */
 import { Action } from "./actions.js";
 
 let expression = document.getElementById("expression");
@@ -46,22 +49,35 @@ const actions = [
   {
     identifier: "toggle-sign",
     keybind: "-",
-    function: undefined,
+    // function: undefined,
   },
 ];
 
+// Initialize all actions without knowing its associated button yet
 actions.forEach((action) => {
   new Action(action.identifier, action.keybind, action.function);
 });
-
-console.log(Action);
-
+// Bind each action to its associated button when possible
 document.querySelectorAll("#calculator > div > button").forEach((element) => {
-  const action = Action.actions.get(element.dataset.action);
+  const action = Action.getActionByIdentifier(element.dataset.action);
   if (action) action.button = element;
 });
 
+document.addEventListener("keydown", (event) => {
+  const action = Action.getActionByKeybind(event.key);
+
+  action?.button?.classList.add("active");
+});
+
+document.addEventListener("keyup", (event) => {
+  const action = Action.getActionByKeybind(event.key);
+
+  action?.button?.classList.remove("active");
+  action?.button?.click();
+});
 
 document.addEventListener("click", (event) => {
-  console.log(event.target);
+  const action = Action.getActionByIdentifier(event.target.dataset.action);
+
+  action.onTrigger();
 });
