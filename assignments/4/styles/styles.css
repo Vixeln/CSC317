@@ -62,20 +62,29 @@ button:active {
 }
 
 .operation > button {
-	background-color: hsl(27, 74%, 53%);
+  background-color: hsl(27, 74%, 53%);
 }
 
 .operation > button:hover {
-	background-color: hsl(33, 100%, 61%);
+  background-color: hsl(33, 100%, 61%);
 }
 
 .numpad {
   grid-column: 1 / 4;
   grid-row: 3 / 7;
-	
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  /* The direction of flow is flipped so that it is laid out
+	 like most calculators which for some reason has 0 at the 
+	 bottom tab navigation hits 0 before hitting 9 */
+  display: flex;
+  flex-wrap: wrap-reverse;
   gap: inherit;
+}
+
+.numpad > button {
+  flex-basis: 5rem;
 }
 
 .utility {
