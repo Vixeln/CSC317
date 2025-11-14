@@ -1,9 +1,13 @@
 export class Action {
   /** @type {Map<string, Action>} */
   static #keybindMap = new Map();
+  /** @type {Map<string, Action>} */
   static #identifierMap = new Map();
-  // /** @type {(action: Action) => void} */
-  // static defaultOntrigger = ;
+
+  identifier;
+  keybind;
+  button;
+  onTrigger;
 
   /**
    *
