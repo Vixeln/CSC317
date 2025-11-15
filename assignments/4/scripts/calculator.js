@@ -3,48 +3,67 @@
  */
 import { Action } from "./actions.js";
 
-let expression = document.getElementById("expression");
+/** @type {HTMLInputElement} */
+let expressionElement = document.getElementById("expression");
+
+/**
+ * @description Helper function to add the pressed key to the expression
+ * @param {Action} action
+ */
+function addSymbol(action) {
+  expressionElement.value += action.keybind;
+}
 
 const actions = [
   {
     identifier: "0",
     keybind: "0",
+    function: addSymbol,
   },
   {
     identifier: "1",
     keybind: "1",
+    function: addSymbol,
   },
   {
     identifier: "2",
     keybind: "2",
+    function: addSymbol,
   },
   {
     identifier: "3",
     keybind: "3",
+    function: addSymbol,
   },
   {
     identifier: "4",
     keybind: "4",
+    function: addSymbol,
   },
   {
     identifier: "5",
     keybind: "5",
+    function: addSymbol,
   },
   {
     identifier: "6",
     keybind: "6",
+    function: addSymbol,
   },
   {
     identifier: "7",
     keybind: "7",
+    function: addSymbol,
   },
   {
     identifier: "8",
     keybind: "8",
+    function: addSymbol,
   },
   {
     identifier: "9",
     keybind: "9",
+    function: addSymbol,
   },
   {
     identifier: "toggle-sign",
