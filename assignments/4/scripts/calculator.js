@@ -55,7 +55,7 @@ const actions = [
 
 // Initialize all actions without knowing its associated button yet
 actions.forEach((action) => {
-  new Action(action.identifier, action.keybind, action.function);
+  new Action(action.identifier, action.keybind, undefined, action.function);
 });
 // Bind each action to its associated button when possible
 document.querySelectorAll("#calculator > div > button").forEach((element) => {
