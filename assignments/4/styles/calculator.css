@@ -56,7 +56,8 @@ button:hover {
   background: #555555;
 }
 
-button:active, button.active {
+button:active,
+button.active {
   transform: scale(0.95);
   opacity: 0.8;
 }
@@ -67,6 +68,14 @@ button:active, button.active {
 
 .operation > button:hover {
   background-color: hsl(33, 100%, 61%);
+}
+
+.utility > button {
+  background-color: hsl(0, 0%, 48%);
+}
+
+.utility > button:hover {
+  background-color: hsl(0, 0%, 59%);
 }
 
 .numpad {
