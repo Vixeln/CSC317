@@ -1,0 +1,290 @@
+/* ------------------------------------------------------------
+   UltraMax 70s Theme (Kodak-inspired)
+   - Warm, nostalgic palette (mustards, burnt oranges, olives, teal)
+   - Filmic treatment on the profile picture (warm cast, halation, subtle grain/vignette)
+   - Persistent, always-visible aside (TOC) on the side
+   - Does NOT touch the theme switcher (#theme-switcher, .theme-button)
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   UltraMax 70s Theme — V2
+   Changes:
+   - Removed gold/white borders from #profilePicture
+   - Uses real PNG grain overlay (../images/grain.png) for photo
+   - Very subtle global/background grain texture
+   - Aside stays visible/sticky as TOC
+   - Does NOT style theme switcher (#theme-switcher, .theme-button)
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   UltraMax 70s Theme — V3
+   - Portrait grain fix for <img id="profilePicture"> via parent :has(> img#profilePicture)
+   - Stronger portrait grain uses ../images/grain.png
+   - Subtle background texture uses ../images/subtle-grain.png
+   - Aside remains sticky/always visible
+   - Theme switcher untouched
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   UltraMax 70s Theme — V4
+   - Uses ONLY ../images/subtle-grain.png for all textures
+   - Stronger filmic filters on the profile picture
+   - Grain overlay confined to the image bounds
+   - Aside stays sticky/visible; theme switcher untouched
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   UltraMax 70s Theme — V5
+   - Stronger sepia + saturation on profile picture (more film-like)
+   - Slightly stronger subtle-grain on all surfaces
+   - Softer (lighter) text color for better harmony with warm background
+   - Still uses only ../images/subtle-grain.png
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   UltraMax 70s Theme — V6
+   - Fix header height collapse with min-height & safe flex layout
+   - Aside bar is sticky to the very top
+   - Remove grid layouts from #skills and #projects (simple blocks)
+   - Keep film/grain aesthetics from V5
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   UltraMax 70s Theme — V7
+   - Header auto-sizes to its content (no fixed or min height)
+   - Sticky aside is robust (no layout collapse from body height)
+   - Uses only ../images/subtle-grain.png
+   - Film look preserved
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   UltraMax 70s Theme — V8
+   - Lower contrast & brightness
+   - Increased sepia for warmer, filmier tone
+   - Preserve adaptive header & sticky aside behavior
+   ------------------------------------------------------------ */
+
+:root {
+  --paper: #f3e9d2;
+  --paper-ink: #3f372d; /* softened ink color */
+  --mustard: #d8b25c;
+  --butter: #ffdb8a;
+  --burnt: #c45a2b;
+  --brick: #9e3f2f;
+  --olive: #6c7a47;
+  --teal: #2f6f6d;
+  --ink: #4a4035; /* lighter text color */
+  --shadow: rgba(30, 27, 22, 0.16);
+  --shadow-strong: rgba(30, 27, 22, 0.3);
+
+  --radius: 10px;
+  --radius-lg: 14px;
+  --gap: 1rem;
+  --gap-lg: 2rem;
+}
+
+/* ===== Layout ===== */
+html, body { margin: 0; padding: 0; }
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 1000px at 20% 0%, rgba(212, 182, 123, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(255, 236, 199, 0.32), rgba(243, 233, 210, 0.76) 55%),
+    var(--paper);
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  line-height: 1.6;
+
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(520px, 1fr) minmax(260px, 340px);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header aside"
+    "main   aside"
+    "footer aside";
+  gap: var(--gap-lg);
+  padding: var(--gap-lg);
+  position: relative;
+}
+
+/* Subtle global grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("../images/subtle-grain.png");
+  background-repeat: repeat;
+  background-size: 512px 512px;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+header, main, aside, footer { position: relative; z-index: 1; }
+
+/* Grid areas */
+header { grid-area: header; }
+main   { grid-area: main; }
+aside  { grid-area: aside; }
+footer { grid-area: footer; }
+
+/* ===== Sticky Aside (TOC) ===== */
+aside {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: calc(100vh - (var(--gap-lg) * 2));
+  overflow: auto;
+  background: rgba(255, 245, 220, 0.5);
+  border-left: 4px solid var(--mustard);
+  border-radius: var(--radius);
+  padding: calc(var(--gap) + 4px);
+  box-shadow:
+    0 2px 10px var(--shadow),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-lg);
+  flex-wrap: wrap;
+  background: linear-gradient(180deg, rgba(255, 239, 209, 0.9), rgba(253, 236, 212, 0.6));
+  padding: var(--gap-lg);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5),
+    0 20px 35px var(--shadow);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+header > * { flex: 0 1 auto; max-width: 100%; }
+
+/* ===== Typography ===== */
+h1, h2, h3 {
+  margin: 0.2em 0 0.4em;
+  letter-spacing: 0.3px;
+  color: var(--ink);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.35);
+}
+h1 { font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--brick); }
+h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--burnt); }
+h3 { font-size: clamp(1.1rem, 2.0vw, 1.3rem); color: var(--olive); }
+
+p, li { font-size: 1rem; max-width: 70ch; color: var(--paper-ink); }
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(47,111,109,0.35);
+  transition: 150ms ease;
+}
+a:hover {
+  color: var(--brick);
+  border-bottom-color: rgba(196,90,43,0.75);
+}
+
+/* ===== Cards (with faint texture) ===== */
+main > section, #projects > section, #skills > section, footer {
+  background: rgba(255, 248, 231, 0.66);
+  border-radius: var(--radius-lg);
+  padding: var(--gap-lg);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55),
+    0 10px 24px var(--shadow);
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+}
+main > section::before, #projects > section::before, #skills > section::before, footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("../images/subtle-grain.png");
+  background-repeat: repeat;
+  background-size: 640px 640px;
+  mix-blend-mode: multiply;
+  opacity: 0.05;
+  border-radius: inherit;
+}
+
+/* ===== Grouping Sections: simple blocks ===== */
+#skills, #projects { display: block; }
+#skills > section, #projects > section { margin-block: var(--gap); }
+
+/* ===== Profile Picture (softer film look) ===== */
+#profilePicture {
+  display: block;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  box-shadow:
+    0 18px 28px var(--shadow-strong),
+    0 0 22px rgba(255, 205, 150, 0.2);
+  filter:
+    sepia(0.5)          /* more sepia */
+    saturate(1.15)
+    contrast(0.95)      /* lower contrast */
+    brightness(0.97)    /* lower brightness */
+    hue-rotate(-10deg)
+    drop-shadow(0 8px 16px rgba(30, 27, 22, 0.3))
+    drop-shadow(0 0 10px rgba(255, 210, 160, 0.18));
+  max-width: min(260px, 40vw);
+  background-color: transparent;
+}
+
+/* Confine grain overlay to image bounds via parent wrapper */
+*:has(> img#profilePicture) {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+*:has(> img#profilePicture)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image: url("../images/subtle-grain.png");
+  background-repeat: repeat;
+  background-size: 512px 512px;
+  mix-blend-mode: multiply;
+  opacity: 0.28;
+  box-shadow: inset 0 0 90px rgba(0,0,0,0.16);
+}
+
+/* ===== TOC Links (theme switcher untouched) ===== */
+#table-of-contents {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+#table-of-contents li a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 246, 220, 0.9);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-left: 6px solid var(--mustard);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+#table-of-contents li a:hover {
+  transform: translateY(-1px);
+  border-left-color: var(--burnt);
+  box-shadow: 0 8px 18px var(--shadow-strong);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  body {
+    grid-template-columns: 1fr minmax(220px, 280px);
+    gap: var(--gap);
+    padding: var(--gap);
+  }
+  header { flex-direction: column; align-items: flex-start; }
+  #profilePicture { max-width: min(70vw, 320px); }
+}
+@media (max-width: 700px) {
+  body { grid-template-columns: 1fr 220px; }
+}
