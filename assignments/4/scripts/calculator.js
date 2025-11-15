@@ -191,10 +191,16 @@ const actions = [
 actions.forEach((action) => {
   new Action(action.identifier, action.keybind, undefined, action.function);
 });
-// Bind each action to its associated button when possible
+// Bind each action to its associated button and add keybind tooltip when possible
 document.querySelectorAll("#calculator > div > button").forEach((element) => {
   const action = Action.getActionByIdentifier(element.dataset.action);
-  if (action) action.button = element;
+  if (action) {
+    action.button = element;
+    element.setAttribute(
+      "title",
+      `${action.identifier} - Press [${action.keybind}]`
+    );
+  }
 });
 
 document.addEventListener("keydown", (event) => {
