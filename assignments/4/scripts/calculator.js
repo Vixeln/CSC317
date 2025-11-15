@@ -14,6 +14,76 @@ function addSymbol(action) {
   expressionElement.value += action.keybind;
 }
 
+/**
+ * @description Helper function to add a multiplcation symbol (×) key to the expression
+ *
+ * Because multiplication display character is different from its keybind character, a separate function is required.
+ * @param {Action} action
+ */
+function multiply(action) {
+  expressionElement.value += "×";
+}
+
+/**
+ * @description Helper function to remove the last character in the expression
+ * @param {Action} action
+ */
+function popSymbol(action) {
+  expressionElement.value = expressionElement.value.slice(0, -1);
+}
+
+/**
+ * @description Helper function for toggle sign action. The function flips the sign of the last number in the expression.
+ * This function can fail silently if it can't find a number at the end of the expression
+ * @param {Action} action
+ */
+function toggleSign() {
+  const regExMatch = expressionElement.value.match(/-?[0-9]*[.]?[0-9]+$/);
+  let newExpression;
+
+  if (regExMatch) {
+    newExpression = expressionElement.value.replace(
+      /-?[0-9]*[.]?[0-9]+$/,
+      "-($&)"
+    );
+  } else {
+    newExpression = expressionElement.value.replace(
+      /-\((-?[0-9()]*[.]?[0-9()]*)\)$/,
+      "$1"
+    );
+  }
+  expressionElement.value = newExpression;
+}
+
+/**
+ * @description Helper function to clear expression
+ * @param {Action} action
+ */
+function clear() {
+  expressionElement.value = "";
+}
+
+function evaluateExpression() {
+  let input = expressionElement.value;
+
+  if (input)
+    try {
+      input = input.replaceAll("×", "*");
+      input = input.replaceAll("%", "/100");
+
+      const output = eval(input);
+      if (output == undefined) {
+        throw new EvalError();
+      }
+      expressionElement.value = output;
+    } catch (error) {
+      if (error instanceof SyntaxError) expressionElement.value = error.message;
+      // console.log(error)
+    } finally {
+      expressionElement.value = "Error";
+    }
+}
+
 const actions = [
   {
     identifier: "0",
@@ -67,8 +137,53 @@ const actions = [
   },
   {
     identifier: "toggle-sign",
+    keybind: "s",
+    function: toggleSign,
+  },
+  {
+    identifier: "add",
+    keybind: "+",
+    function: addSymbol,
+  },
+  {
+    identifier: "subtract",
     keybind: "-",
-    // function: undefined,
+    function: addSymbol,
+  },
+  {
+    identifier: "multiply",
+    keybind: "*",
+    function: multiply,
+  },
+  {
+    identifier: "divide",
+    keybind: "/",
+    function: addSymbol,
+  },
+  {
+    identifier: "percent",
+    keybind: "%",
+    function: addSymbol,
+  },
+  {
+    identifier: "=",
+    keybind: "=",
+    function: evaluateExpression,
+  },
+  {
+    identifier: "delete",
+    keybind: "Backspace",
+    function: popSymbol,
+  },
+  {
+    identifier: "clear",
+    keybind: "Escape",
+    function: clear,
+  },
+  {
+    identifier: ".",
+    keybind: ".",
+    function: addSymbol,
   },
 ];
 
